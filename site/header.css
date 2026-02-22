@@ -1,0 +1,117 @@
+/* Hero: logo left + carousel right */
+.hero {
+    display: flex;
+    height: 210px;
+    overflow: hidden;
+    background: #fff;
+}
+.hero-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #fff;
+}
+.hero-logo img {
+    height: 180px;
+    width: auto;
+}
+
+/* Carousel */
+.carousel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+}
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    z-index: 2;
+    line-height: 1;
+}
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.carousel-dot.active {
+    background: #fff;
+}
+
+/* Nav */
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background: #444;
+}
+#nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+#nav ul li a:hover,
+#nav ul li.current_page_item a {
+    background: #666;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+    }
+    .hero-logo {
+        padding: 15px;
+    }
+    .hero-logo img {
+        height: 120px;
+    }
+    .carousel {
+        height: 220px;
+    }
+}
