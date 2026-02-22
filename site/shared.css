@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: #f5f5f5;
+    background: #eef7f7;
 }
 
 #wrapper {
@@ -47,4 +47,83 @@ a {
 
 .clear {
     clear: both;
+}
+
+/* Persistent footer with FB + Spotify + IG */
+#footer {
+    border-top: 1px solid #ddd;
+    padding: 20px 30px;
+    background: #f5fafa;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-section {
+    width: 100%;
+}
+
+.footer-feeds {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer-col.footer-fb {
+    flex: 0 0 500px;
+}
+
+.footer-col.footer-ig {
+    flex: 1;
+    min-width: 0;
+}
+
+.ig-follow-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    height: 100%;
+    min-height: 200px;
+    padding: 32px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ig-follow-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 20px rgba(131, 58, 180, 0.4);
+    color: #fff;
+}
+
+.ig-follow-btn svg {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+@media (max-width: 700px) {
+    .footer-feeds {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col.footer-fb {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .footer-col.footer-ig {
+        width: 100%;
+    }
 }
