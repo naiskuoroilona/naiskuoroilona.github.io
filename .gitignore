@@ -2,3 +2,4 @@ node_modules/
 html/
 all_image_urls.txt
 unique_image_urls.txt
+.idea
