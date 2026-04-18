@@ -3,13 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "migrate": "node scripts/migrate.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.2.1"
+    "basic-auth": "^2.0.1",
+    "better-sqlite3": "^12.9.0",
+    "express": "^5.2.1",
+    "jsdom": "^29.0.2",
+    "multer": "^2.1.1",
+    "tinymce": "^8.4.0",
+    "tinymce-i18n": "^26.4.6"
   }
 }

@@ -3,3 +3,7 @@ html/
 all_image_urls.txt
 unique_image_urls.txt
 .idea
+ilona.db
+ilona.db-journal
+ilona.db-wal
+ilona.db-shm

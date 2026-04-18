@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin | Naiskuoro Ilona</title>
+<link rel="stylesheet" href="/admin/static/admin.css">
+<script src="/admin/tinymce/tinymce.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <h1>Ilona admin</h1>
+  <nav><a href="/" target="_blank">Katso sivusto ↗</a></nav>
+</header>
+
+<main class="layout">
+  <aside class="sidebar">
+    <h2>Sivut</h2>
+    <ul id="page-list" class="page-list"></ul>
+  </aside>
+
+  <section class="editor-pane">
+    <div id="empty-state" class="empty-state">Valitse sivu vasemmalta.</div>
+
+    <div id="editor-form" class="editor-form" hidden>
+      <div class="form-row">
+        <label for="title-input">Otsikko</label>
+        <input id="title-input" type="text" autocomplete="off">
+        <span class="slug-hint" id="slug-hint"></span>
+      </div>
+
+      <textarea id="editor"></textarea>
+
+      <div class="form-row">
+        <label for="note-input">Muutosviesti (valinnainen)</label>
+        <input id="note-input" type="text" placeholder="esim. päivitin konserttitiedot">
+      </div>
+
+      <div class="actions">
+        <button id="save-btn" class="btn primary">Tallenna</button>
+        <button id="history-btn" class="btn">Versiohistoria</button>
+        <span id="status" class="status"></span>
+      </div>
+    </div>
+
+    <div id="history-panel" class="history-panel" hidden>
+      <h3>Versiohistoria</h3>
+      <ul id="version-list" class="version-list"></ul>
+      <button id="close-history" class="btn">Sulje</button>
+    </div>
+  </section>
+</main>
+
+<script src="/admin/static/admin.js"></script>
+</body>
+</html>
