@@ -10,6 +10,7 @@ const {
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '127.0.0.1';
 const ADMIN_USER = process.env.ADMIN_USER || 'admin';
 const ADMIN_PASS = process.env.ADMIN_PASS || 'ilona';
 
@@ -146,7 +147,7 @@ app.use(express.static(path.join(__dirname), {
   extensions: [],
 }));
 
-app.listen(PORT, () => {
-  console.log(`Naiskuoro Ilona @ http://localhost:${PORT}`);
-  console.log(`Admin @ http://localhost:${PORT}/admin (user: ${ADMIN_USER})`);
+app.listen(PORT, HOST, () => {
+  console.log(`Naiskuoro Ilona @ http://${HOST}:${PORT}`);
+  console.log(`Admin @ http://${HOST}:${PORT}/admin (user: ${ADMIN_USER})`);
 });

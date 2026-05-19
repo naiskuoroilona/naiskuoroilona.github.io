@@ -1,0 +1,33 @@
+[Unit]
+Description=Naiskuoro Ilona (Express + SQLite)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/wwwroot/ilona
+EnvironmentFile=/etc/ilona.env
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ilona
+
+# Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+# Allow writes to the app dir (SQLite db + uploaded images)
+ReadWritePaths=/wwwroot/ilona
+
+[Install]
+WantedBy=multi-user.target

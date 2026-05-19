@@ -7,3 +7,4 @@ ilona.db
 ilona.db-journal
 ilona.db-wal
 ilona.db-shm
+.deploy-host
